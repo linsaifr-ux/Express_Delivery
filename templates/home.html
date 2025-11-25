@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}首頁{% endblock %}
+
+{% block content %}
+<div class="hero text-center" style="padding: 4rem 0;">
+    <h1 class="mb-4">快速、可靠、安全的配送服務</h1>
+    <p class="mb-4" style="font-size: 1.25rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 2rem;">
+        即時追蹤您的包裹，輕鬆管理您的貨件。
+    </p>
+
+    <div class="card" style="max-width: 600px; margin: 0 auto;">
+        <form action="{% url 'track_package' %}" method="get" class="flex" style="gap: 0.5rem;">
+            <input type="text" name="tracking_number" placeholder="輸入追蹤號碼 (例如: 123456789012)" required>
+            <button type="submit" class="btn btn-primary">追蹤</button>
+        </form>
+    </div>
+</div>
+
+<div class="grid grid-cols-3 mt-4">
+    <div class="card">
+        <h3>即時追蹤</h3>
+        <p>從取件到送達，隨時掌握包裹動態。</p>
+    </div>
+    <div class="card">
+        <h3>全球服務</h3>
+        <p>我們的服務網絡覆蓋全球 200 多個國家和地區。</p>
+    </div>
+    <div class="card">
+        <h3>安全處理</h3>
+        <p>為易碎品和高價值物品提供專業處理。</p>
+    </div>
+</div>
+{% endblock %}

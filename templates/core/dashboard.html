@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}儀表板{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="mb-4">我的儀表板</h2>
+
+    <div class="card mb-4">
+        <div class="flex justify-between items-center mb-4">
+            <h3>我的包裹</h3>
+            <a href="{% url 'create_package' %}" class="btn btn-primary">建立新包裹</a>
+        </div>
+
+        {% if packages %}
+        <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr style="border-bottom: 2px solid var(--border-color); text-align: left;">
+                        <th style="padding: 1rem;">追蹤號碼</th>
+                        <th style="padding: 1rem;">收件人</th>
+                        <th style="padding: 1rem;">狀態</th>
+                        <th style="padding: 1rem;">建立日期</th>
+                        <th style="padding: 1rem;">操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for package in packages %}
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                        <td style="padding: 1rem;">{{ package.tracking_number }}</td>
+                        <td style="padding: 1rem;">{{ package.receiver_name }}</td>
+                        <td style="padding: 1rem;">
+                            <span class="badge badge-info">{{ package.get_status_display }}</span>
+                        </td>
+                        <td style="padding: 1rem;">{{ package.created_at|date:"Y/m/d H:i" }}</td>
+                        <td style="padding: 1rem;">
+                            <a href="{% url 'track_package' %}?tracking_number={{ package.tracking_number }}"
+                                class="btn btn-outline" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">追蹤</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <p class="text-secondary text-center py-4">您目前沒有任何包裹紀錄。</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

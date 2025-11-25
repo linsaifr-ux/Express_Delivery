@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}登入{% endblock %}
+
+{% block content %}
+<div class="card" style="max-width: 400px; margin: 2rem auto;">
+    <h2 class="text-center mb-4">登入</h2>
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="form-group">
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {{ field }}
+            {% for error in field.errors %}
+            <small style="color: var(--error-color);">{{ error }}</small>
+            {% endfor %}
+        </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary" style="width: 100%;">登入</button>
+    </form>
+    <p class="text-center mt-4">
+        還沒有帳戶？ <a href="{% url 'register' %}">註冊</a>
+    </p>
+</div>
+{% endblock %}

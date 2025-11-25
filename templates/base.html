@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}快遞傳送系統{% endblock %} | 快遞傳送系統</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v={% now 'U' %}">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="{% url 'home' %}" class="logo">快遞傳送系統</a>
+                <div class="nav-links">
+                    <a href="{% url 'home' %}">追蹤包裹</a>
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'dashboard' %}">儀表板</a>
+                    <a href="{% url 'profile' %}">個人資料</a>
+                    {% if user.is_staff %}
+                    <a href="/admin">管理後台</a>
+                    {% endif %}
+                    <form action="{% url 'logout' %}" method="post" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-outline"
+                            style="margin-left: 1rem; padding: 0.25rem 0.75rem;">登出</button>
+                    </form>
+                    {% else %}
+                    <a href="{% url 'login' %}">登入</a>
+                    <a href="{% url 'register' %}" class="btn btn-primary">註冊</a>
+                    {% endif %}
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <div class="badge badge-{{ message.tags }} mb-4">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; {% now "Y" %} 快遞傳送系統. 版權所有.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
