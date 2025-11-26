@@ -30,7 +30,7 @@ class CustomUserCreationForm(BaseUserCreationForm):
 class PackageForm(forms.ModelForm):
     class Meta:
         model = Package
-        fields = ['receiver_name', 'receiver_address', 'receiver_phone', 'weight', 'dimensions', 'package_type', 'service_type', 'payment_method', 'is_fragile', 'is_hazardous']
+        fields = ['receiver_name', 'receiver_address', 'receiver_phone', 'weight', 'dimensions', 'declared_value', 'description', 'package_type', 'service_type', 'payment_method', 'is_fragile', 'is_hazardous']
         widgets = {
             'receiver_address': forms.Textarea(attrs={'rows': 3}),
         }

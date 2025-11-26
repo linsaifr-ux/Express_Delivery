@@ -86,6 +86,8 @@ class Package(models.Model):
     
     weight = models.DecimalField(max_digits=6, decimal_places=2, help_text=_("Weight (kg)"), verbose_name=_('Weight'))
     dimensions = models.CharField(max_length=100, help_text=_("LxWxH (cm)"), verbose_name=_('Dimensions'))
+    declared_value = models.DecimalField(max_digits=10, decimal_places=2, default=0.00, verbose_name=_('Declared Value'))
+    description = models.TextField(blank=True, verbose_name=_('Description of Contents'))
     package_type = models.CharField(max_length=20, choices=PackageType.choices, default=PackageType.SMALL_BOX, verbose_name=_('Package Type'))
     service_type = models.ForeignKey(ServiceType, on_delete=models.PROTECT, verbose_name=_('Service Type'))
     
