@@ -1,9 +1,10 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm as BaseUserCreationForm
+from django.utils.translation import gettext_lazy as _
 from .models import User, Package, CustomerProfile
 
 class UserUpdateForm(forms.ModelForm):
-    email = forms.EmailField(label='電子郵件')
+    email = forms.EmailField(label=_('Email'))
 
     class Meta:
         model = User
@@ -14,8 +15,8 @@ class CustomerProfileForm(forms.ModelForm):
         model = CustomerProfile
         fields = ['address', 'phone_number']
         labels = {
-            'address': '地址',
-            'phone_number': '電話號碼',
+            'address': _('Address'),
+            'phone_number': _('Phone Number'),
         }
         widgets = {
             'address': forms.Textarea(attrs={'rows': 3}),

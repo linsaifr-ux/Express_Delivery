@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
-{% block title %}註冊{% endblock %}
+{% block title %}{% trans "Sign Up" %}{% endblock %}
 
 {% block content %}
 <div class="card" style="max-width: 400px; margin: 2rem auto;">
-    <h2 class="text-center mb-4">建立帳戶</h2>
+    <h2 class="text-center mb-4">{% trans "Create Account" %}</h2>
     <form method="post">
         {% csrf_token %}
         {% for field in form %}
@@ -19,10 +20,10 @@
             {% endfor %}
         </div>
         {% endfor %}
-        <button type="submit" class="btn btn-primary" style="width: 100%;">註冊</button>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">{% trans "Sign Up" %}</button>
     </form>
     <p class="text-center mt-4">
-        已有帳戶？ <a href="{% url 'login' %}">登入</a>
+        {% trans "Already have an account?" %} <a href="{% url 'login' %}">{% trans "Login" %}</a>
     </p>
 </div>
 {% endblock %}

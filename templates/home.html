@@ -1,34 +1,36 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
-{% block title %}首頁{% endblock %}
+{% block title %}{% trans "Home" %}{% endblock %}
 
 {% block content %}
 <div class="hero text-center" style="padding: 4rem 0;">
-    <h1 class="mb-4">快速、可靠、安全的配送服務</h1>
+    <h1 class="mb-4">{% trans "Fast, Reliable, Secure Delivery Service" %}</h1>
     <p class="mb-4" style="font-size: 1.25rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 2rem;">
-        即時追蹤您的包裹，輕鬆管理您的貨件。
+        {% trans "Track your packages in real-time and manage your shipments with ease." %}
     </p>
 
     <div class="card" style="max-width: 600px; margin: 0 auto;">
         <form action="{% url 'track_package' %}" method="get" class="flex" style="gap: 0.5rem;">
-            <input type="text" name="tracking_number" placeholder="輸入追蹤號碼 (例如: 123456789012)" required>
-            <button type="submit" class="btn btn-primary">追蹤</button>
+            <input type="text" name="tracking_number" class="flex-1"
+                placeholder="{% trans 'Enter tracking number (e.g. 123456789012)' %}" required>
+            <button type="submit" class="btn btn-primary">{% trans "Track" %}</button>
         </form>
     </div>
 </div>
 
 <div class="grid grid-cols-3 mt-4">
     <div class="card">
-        <h3>即時追蹤</h3>
-        <p>從取件到送達，隨時掌握包裹動態。</p>
+        <h3>{% trans "Real-time Tracking" %}</h3>
+        <p>{% trans "Stay updated on your package status from pickup to delivery." %}</p>
     </div>
     <div class="card">
-        <h3>全球服務</h3>
-        <p>我們的服務網絡覆蓋全球 200 多個國家和地區。</p>
+        <h3>{% trans "Global Service" %}</h3>
+        <p>{% trans "Our service network covers over 200 countries and regions worldwide." %}</p>
     </div>
     <div class="card">
-        <h3>安全處理</h3>
-        <p>為易碎品和高價值物品提供專業處理。</p>
+        <h3>{% trans "Secure Handling" %}</h3>
+        <p>{% trans "Professional handling for fragile and high-value items." %}</p>
     </div>
 </div>
 {% endblock %}

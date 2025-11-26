@@ -1,0 +1,394 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Express Delivery System\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-25 12:00+0800\n"
+"PO-Revision-Date: 2023-11-25 12:00+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_Hant\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "English"
+msgstr "英文"
+
+msgid "Traditional Chinese"
+msgstr "繁體中文"
+
+msgid "Express Delivery System"
+msgstr "快遞傳送系統"
+
+msgid "Track Package"
+msgstr "追蹤包裹"
+
+msgid "Dashboard"
+msgstr "儀表板"
+
+msgid "Profile"
+msgstr "個人資料"
+
+msgid "Admin"
+msgstr "管理後台"
+
+msgid "Logout"
+msgstr "登出"
+
+msgid "Login"
+msgstr "登入"
+
+msgid "Sign Up"
+msgstr "註冊"
+
+msgid "All rights reserved."
+msgstr "版權所有。"
+
+msgid "My Dashboard"
+msgstr "我的儀表板"
+
+msgid "My Packages"
+msgstr "我的包裹"
+
+msgid "Create New Package"
+msgstr "建立新包裹"
+
+msgid "Tracking Number"
+msgstr "追蹤號碼"
+
+msgid "Receiver"
+msgstr "收件人"
+
+msgid "Status"
+msgstr "狀態"
+
+msgid "Date Created"
+msgstr "建立日期"
+
+msgid "Actions"
+msgstr "操作"
+
+msgid "Track"
+msgstr "追蹤"
+
+msgid "You have no package history."
+msgstr "您目前沒有任何包裹紀錄。"
+
+msgid "Home"
+msgstr "首頁"
+
+msgid "Fast, Reliable, Secure Delivery Service"
+msgstr "快速、可靠、安全的配送服務"
+
+msgid "Track your packages in real-time and manage your shipments with ease."
+msgstr "即時追蹤您的包裹，輕鬆管理您的貨件。"
+
+msgid "Enter tracking number (e.g. 123456789012)"
+msgstr "輸入追蹤號碼 (例如: 123456789012)"
+
+msgid "Real-time Tracking"
+msgstr "即時追蹤"
+
+msgid "Stay updated on your package status from pickup to delivery."
+msgstr "從取件到送達，隨時掌握包裹動態。"
+
+msgid "Global Service"
+msgstr "全球服務"
+
+msgid "Our service network covers over 200 countries and regions worldwide."
+msgstr "我們的服務網絡覆蓋全球 200 多個國家和地區。"
+
+msgid "Secure Handling"
+msgstr "安全處理"
+
+msgid "Professional handling for fragile and high-value items."
+msgstr "為易碎品和高價值物品提供專業處理。"
+
+msgid "Create Package"
+msgstr "建立包裹"
+
+msgid "Account Profile"
+msgstr "帳戶個人資料"
+
+msgid "Customer Type"
+msgstr "客戶類型"
+
+msgid "Profile Information"
+msgstr "個人資料資訊"
+
+msgid "Update"
+msgstr "更新"
+
+msgid "Change Password"
+msgstr "更改密碼"
+
+msgid "Create Account"
+msgstr "建立帳戶"
+
+msgid "Already have an account?"
+msgstr "已有帳戶？"
+
+msgid "Don't have an account?"
+msgstr "還沒有帳戶？"
+
+msgid "Tracking History"
+msgstr "追蹤紀錄"
+
+msgid "No tracking history found."
+msgstr "查無追蹤紀錄。"
+
+msgid "Sender"
+msgstr "寄件人"
+
+msgid "Enter tracking number"
+msgstr "輸入追蹤號碼"
+
+msgid "User"
+msgstr "使用者"
+
+msgid "Users"
+msgstr "使用者"
+
+msgid "Role"
+msgstr "角色"
+
+msgid "Admin"
+msgstr "管理員"
+
+msgid "Staff"
+msgstr "員工"
+
+msgid "Driver"
+msgstr "司機"
+
+msgid "Customer"
+msgstr "客戶"
+
+msgid "Customer Profile"
+msgstr "客戶資料"
+
+msgid "Customer Profiles"
+msgstr "客戶資料"
+
+msgid "Contract Customer (Monthly Account)"
+msgstr "合約客戶 (設有月結帳戶)"
+
+msgid "Non-Contract Customer (Cash/Credit Card)"
+msgstr "非合約客戶 (以現金或信用卡支付)"
+
+msgid "Prepaid Customer (Merchant/Third Party)"
+msgstr "預付客戶 (貨運費用由商家或第三方支付)"
+
+msgid "Billing Preference"
+msgstr "帳單偏好"
+
+msgid "Monthly Billing"
+msgstr "月結帳單"
+
+msgid "Cash on Delivery"
+msgstr "貨到付款"
+
+msgid "Cash Payment"
+msgstr "現金支付"
+
+msgid "Credit Card Payment"
+msgstr "信用卡支付"
+
+msgid "Prepaid"
+msgstr "預付"
+
+msgid "Address"
+msgstr "地址"
+
+msgid "Phone Number"
+msgstr "電話號碼"
+
+msgid "Service Type"
+msgstr "服務類型"
+
+msgid "Service Types"
+msgstr "服務類型"
+
+msgid "Service Name"
+msgstr "服務名稱"
+
+msgid "Base Price"
+msgstr "基本價格"
+
+msgid "Weight Factor"
+msgstr "重量係數"
+
+msgid "Price per kg"
+msgstr "每公斤價格"
+
+msgid "Speed Factor"
+msgstr "速度係數"
+
+msgid "Speed Multiplier"
+msgstr "速度倍率"
+
+msgid "Delivery Speed"
+msgstr "配送速度"
+
+msgid "Description"
+msgstr "描述"
+
+msgid "Overnight Delivery"
+msgstr "隔夜送達"
+
+msgid "Two-Day Delivery"
+msgstr "兩日送達"
+
+msgid "Standard Delivery"
+msgstr "標準快遞"
+
+msgid "Economy Delivery"
+msgstr "經濟快遞"
+
+msgid "Package"
+msgstr "包裹"
+
+msgid "Packages"
+msgstr "包裹"
+
+msgid "Created"
+msgstr "已建立"
+
+msgid "Picked Up"
+msgstr "已取件"
+
+msgid "In Transit"
+msgstr "運送中"
+
+msgid "Out for Delivery"
+msgstr "配送中"
+
+msgid "Delivered"
+msgstr "已送達"
+
+msgid "Exception"
+msgstr "異常"
+
+msgid "Flat Envelope"
+msgstr "扁平信封"
+
+msgid "Small Box"
+msgstr "小型箱"
+
+msgid "Medium Box"
+msgstr "中型箱"
+
+msgid "Large Box"
+msgstr "大型箱"
+
+msgid "Receiver Name"
+msgstr "收件人姓名"
+
+msgid "Receiver Address"
+msgstr "收件人地址"
+
+msgid "Receiver Phone"
+msgstr "收件人電話"
+
+msgid "Weight"
+msgstr "重量"
+
+msgid "Weight (kg)"
+msgstr "重量 (公斤)"
+
+msgid "Dimensions"
+msgstr "尺寸"
+
+msgid "LxWxH (cm)"
+msgstr "長x寬x高 (公分)"
+
+msgid "Package Type"
+msgstr "包裹類型"
+
+msgid "Created At"
+msgstr "建立時間"
+
+msgid "Estimated Delivery"
+msgstr "預計送達時間"
+
+msgid "Price"
+msgstr "價格"
+
+msgid "Payment Method"
+msgstr "付款方式"
+
+msgid "Prepaid (Merchant/Third Party)"
+msgstr "預付 (由商家/第三方支付)"
+
+msgid "Fragile"
+msgstr "易碎品"
+
+msgid "Hazardous"
+msgstr "危險物品"
+
+msgid "Tracking Event"
+msgstr "追蹤事件"
+
+msgid "Tracking Events"
+msgstr "追蹤事件"
+
+msgid "Location"
+msgstr "地點"
+
+msgid "Timestamp"
+msgstr "時間"
+
+msgid "Invoice"
+msgstr "帳單"
+
+msgid "Invoices"
+msgstr "帳單"
+
+msgid "Pending"
+msgstr "待付款"
+
+msgid "Paid"
+msgstr "已付款"
+
+msgid "Overdue"
+msgstr "逾期"
+
+msgid "Amount"
+msgstr "金額"
+
+msgid "Due Date"
+msgstr "到期日"
+
+msgid "Period Start"
+msgstr "計費週期開始"
+
+msgid "Period End"
+msgstr "計費週期結束"
+
+msgid "Email"
+msgstr "電子郵件"
+
+msgid "Registration successful!"
+msgstr "註冊成功！"
+
+msgid "Package with tracking number %(tracking_number)s not found."
+msgstr "找不到追蹤號碼為 %(tracking_number)s 的包裹。"
+
+msgid "Package created successfully! Tracking Number: %(tracking_number)s"
+msgstr "包裹建立成功！追蹤號碼：%(tracking_number)s"
+
+msgid "Your account has been updated!"
+msgstr "您的帳戶已更新！"
+
+msgid "Password Changed"
+msgstr "密碼已更改"
+
+msgid "Your password has been changed successfully."
+msgstr "您的密碼已成功更改。"
+
+msgid "Back to Profile"
+msgstr "返回個人資料"
+
+msgid "Cancel"
+msgstr "取消"

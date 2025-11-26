@@ -1,15 +1,16 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
-{% block title %}儀表板{% endblock %}
+{% block title %}{% trans "Dashboard" %}{% endblock %}
 
 {% block content %}
 <div class="container">
-    <h2 class="mb-4">我的儀表板</h2>
+    <h2 class="mb-4">{% trans "My Dashboard" %}</h2>
 
     <div class="card mb-4">
         <div class="flex justify-between items-center mb-4">
-            <h3>我的包裹</h3>
-            <a href="{% url 'create_package' %}" class="btn btn-primary">建立新包裹</a>
+            <h3>{% trans "My Packages" %}</h3>
+            <a href="{% url 'create_package' %}" class="btn btn-primary">{% trans "Create New Package" %}</a>
         </div>
 
         {% if packages %}
@@ -17,11 +18,11 @@
             <table style="width: 100%; border-collapse: collapse;">
                 <thead>
                     <tr style="border-bottom: 2px solid var(--border-color); text-align: left;">
-                        <th style="padding: 1rem;">追蹤號碼</th>
-                        <th style="padding: 1rem;">收件人</th>
-                        <th style="padding: 1rem;">狀態</th>
-                        <th style="padding: 1rem;">建立日期</th>
-                        <th style="padding: 1rem;">操作</th>
+                        <th style="padding: 1rem;">{% trans "Tracking Number" %}</th>
+                        <th style="padding: 1rem;">{% trans "Receiver" %}</th>
+                        <th style="padding: 1rem;">{% trans "Status" %}</th>
+                        <th style="padding: 1rem;">{% trans "Date Created" %}</th>
+                        <th style="padding: 1rem;">{% trans "Actions" %}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,7 +36,7 @@
                         <td style="padding: 1rem;">{{ package.created_at|date:"Y/m/d H:i" }}</td>
                         <td style="padding: 1rem;">
                             <a href="{% url 'track_package' %}?tracking_number={{ package.tracking_number }}"
-                                class="btn btn-outline" style="padding: 0.25rem 0.5rem; font-size: 0.875rem;">追蹤</a>
+                                class="btn btn-outline btn-sm">{% trans "Track" %}</a>
                         </td>
                     </tr>
                     {% endfor %}
@@ -43,7 +44,7 @@
             </table>
         </div>
         {% else %}
-        <p class="text-secondary text-center py-4">您目前沒有任何包裹紀錄。</p>
+        <p class="text-secondary text-center py-4">{% trans "You have no package history." %}</p>
         {% endif %}
     </div>
 </div>

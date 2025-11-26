@@ -16,8 +16,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls.i18n import i18n_patterns
+
+from core.views import set_language_custom
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('core.urls')),
+    path('i18n/setlang/', set_language_custom, name='set_language'),
+    path('i18n/', include('django.conf.urls.i18n')),
+    path('', lambda request: redirect(f'/{settings.LANGUAGE_CODE}/')),
 ]
+
+from django.shortcuts import redirect
+
+from django.conf import settings
+
+# Manual i18n patterns to workaround i18n_patterns issue
+for lang_code, lang_name in settings.LANGUAGES:
+    urlpatterns += [
+        path(f'{lang_code}/', include('core.urls')),
+        path(f'{lang_code}/admin/', admin.site.urls),
+    ]

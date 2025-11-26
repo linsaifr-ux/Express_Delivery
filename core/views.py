@@ -2,8 +2,28 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.utils.translation import gettext as _
 from .models import User, Package, TrackingEvent, CustomerProfile
 from .forms import PackageForm, CustomUserCreationForm, UserUpdateForm, CustomerProfileForm
+
+from django.views.i18n import set_language
+from django.urls import translate_url
+
+def set_language_custom(request):
+    response = set_language(request)
+    if response.status_code == 302:
+        next_url = response.url
+        # If the response is a redirect, translate the URL to the selected language
+        if request.method == 'POST':
+            lang_code = request.POST.get('language')
+            if lang_code and next_url:
+                if next_url == '/':
+                    response['Location'] = f'/{lang_code}/'
+                else:
+                    translated_url = translate_url(next_url, lang_code)
+                    if translated_url:
+                        response['Location'] = translated_url
+    return response
 
 def home(request):
     return render(request, 'home.html')
@@ -17,7 +37,7 @@ def register(request):
             CustomerProfile.objects.create(user=user, address='Update your address', phone_number='Update phone')
             
             login(request, user)
-            messages.success(request, 'Registration successful!')
+            messages.success(request, _('Registration successful!'))
             return redirect('home')
     else:
         form = CustomUserCreationForm()
@@ -30,7 +50,7 @@ def track_package(request):
         try:
             package = Package.objects.get(tracking_number=tracking_number)
         except Package.DoesNotExist:
-            messages.error(request, f'Package with tracking number {tracking_number} not found.')
+            messages.error(request, _('Package with tracking number %(tracking_number)s not found.') % {'tracking_number': tracking_number})
     
     return render(request, 'tracking/track.html', {'package': package, 'tracking_number': tracking_number})
 
@@ -51,7 +71,7 @@ def create_package(request):
                 description='Package created'
             )
             
-            messages.success(request, f'Package created successfully! Tracking Number: {package.tracking_number}')
+            messages.success(request, _('Package created successfully! Tracking Number: %(tracking_number)s') % {'tracking_number': package.tracking_number})
             return redirect('track_package')
     else:
         form = PackageForm(user=request.user)
@@ -76,7 +96,7 @@ def profile(request):
         if u_form.is_valid() and p_form.is_valid():
             u_form.save()
             p_form.save()
-            messages.success(request, 'Your account has been updated!')
+            messages.success(request, _('Your account has been updated!'))
             return redirect('profile')
     else:
         u_form = UserUpdateForm(instance=request.user)

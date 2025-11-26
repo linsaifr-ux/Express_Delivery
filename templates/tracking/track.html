@@ -1,15 +1,16 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
-{% block title %}追蹤包裹{% endblock %}
+{% block title %}{% trans "Track Package" %}{% endblock %}
 
 {% block content %}
 <div class="card" style="max-width: 800px; margin: 2rem auto;">
-    <h2 class="mb-4">追蹤包裹</h2>
+    <h2 class="mb-4">{% trans "Track Package" %}</h2>
 
     <form method="get" class="flex mb-4" style="gap: 0.5rem;">
-        <input type="text" name="tracking_number" value="{{ tracking_number|default:'' }}" placeholder="輸入追蹤號碼"
-            required>
-        <button type="submit" class="btn btn-primary">追蹤</button>
+        <input type="text" name="tracking_number" value="{{ tracking_number|default:'' }}"
+            placeholder="{% trans 'Enter tracking number' %}" required>
+        <button type="submit" class="btn btn-primary">{% trans "Track" %}</button>
     </form>
 
     {% if package %}
@@ -21,17 +22,17 @@
 
         <div class="grid grid-cols-2 mb-4">
             <div>
-                <strong>寄件人:</strong><br>
+                <strong>{% trans "Sender" %}:</strong><br>
                 {{ package.sender.username }}
             </div>
             <div>
-                <strong>收件人:</strong><br>
+                <strong>{% trans "Receiver" %}:</strong><br>
                 {{ package.receiver_name }}<br>
                 {{ package.receiver_address }}
             </div>
         </div>
 
-        <h4 class="mt-4 mb-4">追蹤紀錄</h4>
+        <h4 class="mt-4 mb-4">{% trans "Tracking History" %}</h4>
         <div class="timeline">
             {% for event in package.events.all|dictsortreversed:"timestamp" %}
             <div class="timeline-item"
@@ -39,7 +40,7 @@
                 <div
                     style="position: absolute; left: -5px; top: 0; width: 8px; height: 8px; border-radius: 50%; background-color: var(--primary-color);">
                 </div>
-                <div class="text-secondary" style="font-size: 0.875rem;">{{ event.timestamp|date:"Y年m月d日 H:i" }}</div>
+                <div class="text-secondary" style="font-size: 0.875rem;">{{ event.timestamp|date:"Y/m/d H:i" }}</div>
                 <div style="font-weight: 600;">{{ event.get_status_display }}</div>
                 <div>{{ event.location }}</div>
                 {% if event.description %}
@@ -47,7 +48,7 @@
                 {% endif %}
             </div>
             {% empty %}
-            <p>查無追蹤紀錄。</p>
+            <p>{% trans "No tracking history found." %}</p>
             {% endfor %}
         </div>
     </div>
