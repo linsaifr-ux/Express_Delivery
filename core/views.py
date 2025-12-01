@@ -63,13 +63,7 @@ def create_package(request):
             package.sender = request.user
             package.save()
             
-            # Create initial tracking event
-            TrackingEvent.objects.create(
-                package=package,
-                status=Package.Status.CREATED,
-                location='System',
-                description='Package created'
-            )
+            # Initial tracking event is now handled by signals
             
             messages.success(request, _('Package created successfully! Tracking Number: %(tracking_number)s') % {'tracking_number': package.tracking_number})
             return redirect('track_package')

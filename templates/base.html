@@ -26,7 +26,7 @@
                     <a href="{% url 'dashboard' %}">{% trans "Dashboard" %}</a>
                     <a href="{% url 'profile' %}">{% trans "Profile" %}</a>
                     {% if user.is_staff %}
-                    <a href="/admin">{% trans "Admin" %}</a>
+                    <a href="{% url 'admin:index' %}">{% trans "Admin" %}</a>
                     {% endif %}
                     {% endif %}
                 </div>

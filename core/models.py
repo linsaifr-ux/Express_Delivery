@@ -68,6 +68,8 @@ class Package(models.Model):
         CREATED = 'CREATED', _('Created')
         PICKED_UP = 'PICKED_UP', _('Picked Up')
         IN_TRANSIT = 'IN_TRANSIT', _('In Transit')
+        SORTING = 'SORTING', _('Sorting')
+        HUB_TRANSFER = 'HUB_TRANSFER', _('Hub Transfer')
         OUT_FOR_DELIVERY = 'OUT_FOR_DELIVERY', _('Out for Delivery')
         DELIVERED = 'DELIVERED', _('Delivered')
         EXCEPTION = 'EXCEPTION', _('Exception')
@@ -108,6 +110,10 @@ class Package(models.Model):
     # Special handling
     is_fragile = models.BooleanField(default=False, verbose_name=_('Fragile'))
     is_hazardous = models.BooleanField(default=False, verbose_name=_('Hazardous'))
+
+    # Proof of Delivery
+    signature = models.ImageField(upload_to='signatures/', blank=True, null=True, verbose_name=_('Signature'))
+    signed_by = models.CharField(max_length=100, blank=True, verbose_name=_('Signed By'))
 
     class Meta:
         verbose_name = _('Package')

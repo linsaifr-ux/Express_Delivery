@@ -32,6 +32,22 @@
             </div>
         </div>
 
+        {% if package.status == 'DELIVERED' or package.signature %}
+        <div class="mb-4 p-4 bg-gray-50 rounded"
+            style="background-color: #f8f9fa; border: 1px solid var(--border-color);">
+            <h4 class="mb-2">{% trans "Proof of Delivery" %}</h4>
+            {% if package.signed_by %}
+            <p><strong>{% trans "Signed By" %}:</strong> {{ package.signed_by }}</p>
+            {% endif %}
+            {% if package.signature %}
+            <div class="mt-2">
+                <img src="{{ package.signature.url }}" alt="{% trans 'Signature' %}"
+                    style="max-width: 200px; border: 1px solid #ddd;">
+            </div>
+            {% endif %}
+        </div>
+        {% endif %}
+
         <h4 class="mt-4 mb-4">{% trans "Tracking History" %}</h4>
         <div class="timeline">
             {% for event in package.events.all|dictsortreversed:"timestamp" %}
